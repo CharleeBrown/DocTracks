@@ -1,20 +1,24 @@
 extends layout
 
 block content
+  .container
   h1= title
   p Welcome to #{title}
-  h2 Modal Example
-      // Trigger the modal with a button
-      button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Open Modal
-      // Modal
-      #myModal.modal.fade(role='dialog')
-        .modal-dialog
-          // Modal content
-          .modal-content
-            .modal-header
-              button.close(type='button' data-dismiss='modal') &times;
-              h4.modal-title Modal Header
-            .modal-body
-              p Some text in the modal.
-            .modal-footer
-              button.btn.btn-default(type='button' data-dismiss='modal') Close
+    h2 Modal Example
+        // Trigger the modal with a button
+        button.btn.btn-info.btn-lg(type='button' data-toggle='modal' data-target='#myModal') Open Modal
+        // Modal
+        #myModal.modal.fade(role='dialog')
+          .modal-dialog
+            // Modal content
+            .modal-content
+              .modal-header
+                button.close(type='button' data-dismiss='modal' aria-label="Close") &times;
+                h4.modal-title Modal Header
+              .modal-body
+                p Some text in the modal.
+                form
+                  label(for="txt")|Test Form
+                  input(type="text" name="txt")  
+              .modal-footer
+                button.btn.btn-default(type='button' data-dismiss='modal') Close
